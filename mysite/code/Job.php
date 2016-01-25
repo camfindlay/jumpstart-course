@@ -16,18 +16,18 @@ class Job extends DataObject {
     );
 
     public function canView($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain');
+        return Permission::check('CMS_ACCESS_JobAdmin');
     }
 
     public function canEdit($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain');
+        return Permission::check('CMS_ACCESS_JobAdmin');
     }
 
     public function canDelete($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain');
+        return Permission::check('CMS_ACCESS_JobAdmin');
     }
 
     public function canCreate($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain');
+        return Permission::check('CMS_ACCESS_JobAdmin');
     }
 }
