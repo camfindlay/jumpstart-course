@@ -12,6 +12,8 @@
 		<% else %>
             <p>No jobs currently available.</p>
 		<% end_if %>
+		<h3>Apply for a job</h3>
+		$ApplicationForm
 	</article>
 		$Form
 		$CommentsForm
