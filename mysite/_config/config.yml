@@ -9,3 +9,6 @@ After:
 # Caution: Indentation through two spaces, not tabs
 SSViewer:
   theme: 'mytheme'
+SiteConfig:
+  extensions:
+    - SiteConfigExtension
