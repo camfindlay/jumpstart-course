@@ -12,6 +12,7 @@ class StaffPage extends Page {
 
     private static $has_one = array(
         'Photo' => 'Image',
+        'Report' => 'File',
     );
 
     public function getCMSFields(){
@@ -33,6 +34,16 @@ class StaffPage extends Page {
         $fields->addFieldToTab(
             'Root.Main',
             UploadField::create('Photo'),
+            'Content'
+        );
+
+        $report = UploadField::create('Report')
+            ->setFolderName('Reports')
+            ->setDescription('Only PDF can be uploaded.');
+        $report->getValidator()->setAllowedExtensions(array('pdf'));
+        $fields->addFieldToTab(
+            'Root.Main',
+            $report,
             'Content'
         );
 
