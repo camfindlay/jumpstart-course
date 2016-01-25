@@ -13,6 +13,8 @@ class StaffPage extends Page {
     private static $has_one = array(
         'Photo' => 'Image',
         'Report' => 'File',
+        'Department' => 'Department',
+        'Role' => 'Role',
     );
 
     public function getCMSFields(){
@@ -44,6 +46,26 @@ class StaffPage extends Page {
         $fields->addFieldToTab(
             'Root.Main',
             $report,
+            'Content'
+        );
+
+        $fields->addFieldToTab(
+            'Root.Main',
+            DropdownField::create(
+                'RoleID',
+                'Role',
+                Role::get()->map('ID', 'Title')
+            )->setEmptyString('(Select)'),
+            'Content'
+        );
+
+        $fields->addFieldToTab(
+            'Root.Main',
+            DropdownField::create(
+                'DepartmentID',
+                'Department',
+                Department::get()->map('ID', 'Title')
+            )->setEmptyString('(Select)'),
             'Content'
         );
 

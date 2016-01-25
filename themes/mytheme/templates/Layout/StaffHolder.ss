@@ -11,6 +11,7 @@
                     </a>
                 <% end_if %>
                 <h2><a href="$Link">$Title</a></h2>
+                <em>$Role.Title</em>
             </p>
 		<% end_loop %>
 	</article>
