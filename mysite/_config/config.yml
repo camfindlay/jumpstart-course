@@ -12,3 +12,6 @@ SSViewer:
 SiteConfig:
   extensions:
     - SiteConfigExtension
+Member:
+  extensions:
+    - MemberExtension
