@@ -21,6 +21,16 @@ class JobApplication extends DataObject {
         'Status' => 'Status',
     );
 
+
+    public function onAfterWrite(){
+        if($this->Status == 'Hired'){
+            $job = $this->Job();
+            $job->Status = 'Closed';
+            $job->write();
+        }
+        parent::onAfterWrite();
+    }
+
     public function canView($member = null) {
         return Permission::check('CMS_ACCESS_JobAdmin');
     }
