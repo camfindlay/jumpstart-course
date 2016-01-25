@@ -6,6 +6,9 @@
             <li>Phone: $Phone</li>
             <li>Email: $Email</li>
         </ul>
+        <% if $Photo %>
+            <img class="left" src="$Photo.SetWidth(200).Url">
+        <% end_if %>
 		<div class="content">$Content</div>
 	</article>
 		$Form
